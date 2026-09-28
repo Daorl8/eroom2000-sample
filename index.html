@@ -151,7 +151,9 @@ a{ color:inherit; text-decoration:none; }
 .menu .nm{ flex:1; font-weight:600; }
 .menu .nm small{ font-weight:500; color:var(--ink-soft); margin-left:.35em; font-size:.84rem; }
 .menu .pr{ font-variant-numeric:tabular-nums; font-weight:700; color:var(--blue-ink); }
-.note{ font-size:.82rem; color:var(--ink-soft); margin:12px 2px 0; word-break:keep-all; }
+.note{ font-size:.86rem; color:var(--ink-soft); margin:14px 2px 0; word-break:keep-all; line-height:1.6; }
+.note b{ color:var(--ink); font-weight:700; }
+.note a{ color:var(--blue-ink); font-weight:600; border-bottom:2px solid var(--grain); }
 
 /* ---------- visit ---------- */
 .visit dl{ margin:0; border-top:1.5px solid var(--ink); }
@@ -178,9 +180,33 @@ a{ color:inherit; text-decoration:none; }
   .hero{ padding-top:64px; }
   .sec h2{ font-size:1.7rem; }
 }
+
+/* ---------- PC: 왼쪽 블루 브랜드 패널 고정 + 오른쪽 콘텐츠 ---------- */
+.hero-meta{ display:none; }
+@media (min-width:960px){
+  .page{ display:grid; grid-template-columns:minmax(400px,44%) 1fr; min-height:100vh; }
+  .hero{ grid-column:1; grid-row:1 / span 2; position:sticky; top:0; height:100vh; display:flex; flex-direction:column; justify-content:center; padding:56px 48px; }
+  .hero::after{ display:none; }
+  .hero .col{ max-width:380px; }
+  .hero-logo{ width:min(100%,300px); }
+  .hero .lead{ font-size:1.3rem; margin-top:32px; }
+  .label{ width:100%; max-width:300px; }
+  .hero-meta{ display:block; position:absolute; left:48px; right:48px; bottom:36px; margin:0; font-size:.8rem; color:rgba(255,255,255,.86); text-align:center; }
+  .page > main.col{ grid-column:2; max-width:560px; padding:64px 44px 0; }
+  .feature{ margin-top:0; }
+  .sec{ margin-top:64px; }
+  .sec h2{ font-size:1.9rem; }
+  .shots{ gap:12px; }
+  .page > .foot{ grid-column:2; background:transparent; color:var(--ink-soft); margin:64px auto 0; width:100%; max-width:560px; padding:28px 44px 44px; border-top:1px solid var(--line); text-align:left; }
+  .page > .foot img{ display:none; }
+  .page > .foot p{ color:var(--ink-soft); }
+  .page > .foot b{ color:var(--ink); }
+  .page > .foot a{ border-bottom-color:var(--line); }
+}
 </style>
 </head>
 <body>
+<div class="page">
 
 <!-- ============ HERO ============ -->
 <header class="hero">
@@ -193,6 +219,7 @@ a{ color:inherit; text-decoration:none; }
       <div><dt>시작</dt><dd>Since 2000</dd></div>
     </dl>
   </div>
+  <p class="hero-meta">경기 의정부 · 월–토 09:00–17:00 · 일요일 휴무</p>
 </header>
 
 <main class="col">
@@ -259,7 +286,7 @@ a{ color:inherit; text-decoration:none; }
       <li><span class="nm">초당말랑이떡</span><span class="pr">1,500원</span></li>
       <li><span class="nm">쑥말랑이떡</span><span class="pr">1,500원</span></li>
     </ul>
-    <p class="note">낱개 가격 기준 · 8개입(1호)·16개입(2호) 세트는 스마트스토어·네이버에서 확인해 주세요.</p>
+    <p class="note">대표 메뉴 낱개 가격 기준이에요. <b>그날 나오는 떡은 매번 달라지니</b>, 오늘의 메뉴와 세트 구성은 <a href="https://smartstore.naver.com/eroom2026" target="_blank" rel="noopener">스마트스토어</a>·<a href="https://www.instagram.com/eroom2000/" target="_blank" rel="noopener">인스타그램</a>에서 확인해 주세요.</p>
   </section>
 
   <!-- ============ VISIT ============ -->
@@ -282,6 +309,8 @@ a{ color:inherit; text-decoration:none; }
   <p>Rice Cake &amp; Dessert · <a href="https://www.instagram.com/eroom2000/" target="_blank" rel="noopener">@eroom2000</a></p>
   <p>© 2026 이룸미당. 정성으로 빚어 이룸을 전합니다.</p>
 </footer>
+
+</div>
 
 <script>
 (function(){
