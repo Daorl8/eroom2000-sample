@@ -183,6 +183,7 @@ a{ color:inherit; text-decoration:none; }
 
 /* ---------- PC: 왼쪽 블루 브랜드 패널 고정 + 오른쪽 콘텐츠 ---------- */
 .hero-meta{ display:none; }
+.hero-order{ display:none; }
 @media (min-width:960px){
   .page{ display:grid; grid-template-columns:minmax(400px,44%) 1fr; min-height:100vh; }
   .hero{ grid-column:1; grid-row:1 / span 2; position:sticky; top:0; height:100vh; display:flex; flex-direction:column; justify-content:center; padding:56px 48px; }
@@ -191,6 +192,11 @@ a{ color:inherit; text-decoration:none; }
   .hero-logo{ width:min(100%,300px); }
   .hero .lead{ font-size:1.3rem; margin-top:32px; }
   .label{ width:100%; max-width:300px; }
+  .hero-order{ display:flex; align-items:center; justify-content:center; gap:6px; width:100%; max-width:300px; margin:28px auto 0; padding:15px 20px; border-radius:14px; background:#fff; color:var(--blue-ink); font-family:var(--head); font-weight:700; font-size:1.02rem; transition:transform .15s ease, background .15s ease; }
+  .hero-order svg{ width:18px; height:18px; }
+  .hero-order:hover{ background:var(--paper-2); }
+  .hero-order:active{ transform:scale(.98); }
+  .hero-order:focus-visible{ outline:3px solid var(--grain); outline-offset:3px; }
   .hero-meta{ display:block; position:absolute; left:48px; right:48px; bottom:36px; margin:0; font-size:.8rem; color:rgba(255,255,255,.86); text-align:center; }
   .page > main.col{ grid-column:2; max-width:560px; padding:64px 44px 0; }
   .feature{ margin-top:0; }
@@ -218,6 +224,7 @@ a{ color:inherit; text-decoration:none; }
       <div><dt>생산</dt><dd>당일 생산 · 당일 판매</dd></div>
       <div><dt>시작</dt><dd>Since 2000</dd></div>
     </dl>
+    <a class="hero-order" href="https://smartstore.naver.com/eroom2026" target="_blank" rel="noopener">스마트스토어 주문<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
   </div>
   <p class="hero-meta">경기 의정부 · 월–토 09:00–17:00 · 일요일 휴무</p>
 </header>
