@@ -14,8 +14,10 @@
 ├─ er-cups.webp         파란 스티커 컵 포장 (갤러리)
 ├─ er-injeolmi.webp     쑥 인절미 4:3 (갤러리)
 ├─ er-gift.webp         리본 선물 상자 (선물·답례)
-├─ er-hands.webp        단호박 찰떡 빚는 손 (소개 · 쌀알 mask)
-├─ er-band.webp         인절미 풀폭 밴드 1280×480
+├─ er-grainfill.webp    쑥말랑이떡 접시 세로 502×702 (소개 · 쌀알 mask)
+├─ er-chodang.webp      초당말랑이떡 나무 상자 (갤러리)
+├─ er-band.webp         답례 세트 풀폭 띠 1206×400 (최대폭 1440)
+├─ er-hands.webp · er-ssuk.webp   미사용(.assetsignore 제외, 업로드 X)
 ├─ er-grain-blue.webp   파란 쌀알 (푸터 흰 스티커)
 ├─ index_v1.html        v1.0 비교용 백업 (.assetsignore 제외)
 ├─ paperlogy-sub.woff2  Paperlogy Bold 서브셋 21KB (OFL 1.1)
