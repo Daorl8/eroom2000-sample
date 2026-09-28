@@ -167,10 +167,6 @@ section[id]{ scroll-margin-top:64px; }
 .note b{ color:var(--ink); }
 .note a{ color:var(--blue-ink); font-weight:600; border-bottom:2px solid var(--grain); }
 
-/* ---------- photo band (풀폭) ---------- */
-.band{ margin:clamp(72px,11vw,120px) auto 0; max-width:1440px; }
-.band img{ width:100%; height:clamp(180px,30vw,420px); object-fit:cover; }
-
 /* ---------- gift ---------- */
 .gift-grid{ display:grid; gap:32px; }
 .gift-photo img{ width:100%; aspect-ratio:1/1; object-fit:cover; }
@@ -184,7 +180,7 @@ section[id]{ scroll-margin-top:64px; }
 .gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:6px; }
 .gallery img{ width:100%; height:100%; aspect-ratio:1/1; object-fit:cover; }
 .gallery .big{ grid-column:span 2; }
-.gallery .big img{ aspect-ratio:4/3; }
+.gallery .big img{ aspect-ratio:4/3; object-position:50% 52%; }
 
 /* ---------- reviews (장부처럼 줄로) ---------- */
 .reviews{ display:grid; border-top:var(--rule); }
@@ -346,11 +342,6 @@ section[id]{ scroll-margin-top:64px; }
     </div>
   </section>
 
-  <!-- ============ PHOTO BAND (풀폭) ============ -->
-  <div class="band" role="img" aria-label="개별 포장한 초당말랑이떡과 인절미 답례 세트가 줄지어 놓인 모습">
-    <img loading="lazy" src="er-band.webp" alt="" width="1206" height="400" />
-  </div>
-
   <!-- ============ GIFT ============ -->
   <section class="sec" id="gift" aria-labelledby="gift-h">
     <div class="wrap">
@@ -375,7 +366,7 @@ section[id]{ scroll-margin-top:64px; }
       <div class="sh"><span>매일 빚는 떡</span><span>@eroom2000</span></div>
       <h2 id="gallery-h">재료 본연의 맛을 전하려<br />매일 연구합니다</h2>
       <div class="gallery reveal">
-        <div class="big"><img loading="lazy" src="er-injeolmi.webp" alt="콩고물을 묻힌 쑥 인절미" width="1000" height="750" /></div>
+        <div class="big"><img loading="lazy" src="er-bite.webp" alt="한 입 베어 문 팥 찹쌀떡을 손에 든 모습" width="1024" height="1280" /></div>
         <div><img loading="lazy" src="er-white.webp" alt="하얀 이룸말랑이떡 클로즈업" width="900" height="900" /></div>
         <div><img loading="lazy" src="er-chodang.webp" alt="나무 상자에 담은 초당말랑이떡" width="900" height="900" /></div>
         <div><img loading="lazy" src="er-cups.webp" alt="이룸미당 파란 스티커를 붙인 찹쌀떡 컵 포장" width="900" height="900" /></div>
