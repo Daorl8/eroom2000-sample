@@ -14,7 +14,10 @@
 ├─ er-cups.webp         파란 스티커 컵 포장 (갤러리)
 ├─ er-injeolmi.webp     쑥 인절미 4:3 (갤러리)
 ├─ er-gift.webp         리본 선물 상자 (선물·답례)
-├─ er-hands.webp        단호박 찰떡 빚는 손 (소개)
+├─ er-hands.webp        단호박 찰떡 빚는 손 (소개 · 쌀알 mask)
+├─ er-band.webp         인절미 풀폭 밴드 1280×480
+├─ er-grain-blue.webp   파란 쌀알 (푸터 흰 스티커)
+├─ index_v1.html        v1.0 비교용 백업 (.assetsignore 제외)
 ├─ paperlogy-sub.woff2  Paperlogy Bold 서브셋 21KB (OFL 1.1)
 ├─ favicon.png · og-eroom.jpg(1200×630)
 ├─ wrangler.toml · .assetsignore · CHANGELOG.md · STRUCTURE.md
@@ -37,7 +40,8 @@
 
 ## ⚠️ 확인/보류
 - 영업시간=블로그 기준(월–토 09–17). 플레이스 9/28(월) 휴무 표시 → 임시휴무 여부 확인.
-- 쑥말랑이 세트가·흑임자인절미 가격 미확보("문의" 표기). 호박카스테라인절미 3,000원은 리뷰 영수증 기준.
+- 메뉴 = 네이버 플레이스 등록 4종만, 가격 비노출(v1.2 다올 결정). 상시/시즌 여부는 사장님 확인 전(초당은 IG상 시즌 가능성).
+- 모션은 기기 '동작 줄이기' 설정과 무관하게 강제 재생(다올 지시).
 - 후기 5건은 실제 네이버 방문자 리뷰(마스킹·이모지 제거·경미한 교정). 사장님께 게재 동의 확인 권장.
 - 흑임자(까망이) 단독 깨끗한 사진 없음.
 - 헤드리스 렌더 불가 → 배포 후 라이브 확인. 고객 인계 시 `grep lgt3232` 5곳 치환 + Pretendard self-host.
