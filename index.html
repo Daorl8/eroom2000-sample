@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>이룸미당 · Rice Cake &amp; Dessert | 의정부 수제 찰떡</title>
+<meta name="description" content="쌀알 그대로 빚은 수제 찰떡, 이룸미당. 100% 국내산 쌀·당일 생산 말랑이떡. 스마트스토어 전국 택배, 네이버 예약, 매장 안내를 한 곳에서." />
+<meta name="theme-color" content="#2D4BA3" />
+
+<link rel="canonical" href="https://eroom2000-sample.lgt3232.workers.dev/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="이룸미당" />
+<meta property="og:title" content="이룸미당 · Rice Cake &amp; Dessert" />
+<meta property="og:description" content="쌀알 그대로 빚은 수제 찰떡. 주문·예약·매장 안내를 한 곳에서." />
+<meta property="og:url" content="https://eroom2000-sample.lgt3232.workers.dev/" />
+<meta property="og:image" content="https://eroom2000-sample.lgt3232.workers.dev/og-eroom.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="favicon.png" />
+
+<!-- 시안 도메인 = eroom2000-sample.lgt3232.workers.dev. 고객 인계 시 grep lgt3232 → canonical·og:url·og:image·JSON-LD url/image 5곳 치환 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "이룸미당",
+  "alternateName": "EROOM MIDANG · Rice Cake & Dessert",
+  "description": "쌀알 그대로 빚는 수제 찰떡 전문점. 100% 국내산 쌀, 당일 생산 말랑이떡.",
+  "url": "https://eroom2000-sample.lgt3232.workers.dev/",
+  "image": "https://eroom2000-sample.lgt3232.workers.dev/og-eroom.jpg",
+  "telephone": "+82-507-1334-3082",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "용현로159번길 12 1층 101호",
+    "addressLocality": "의정부시",
+    "addressRegion": "경기도",
+    "addressCountry": "KR"
+  },
+  "servesCuisine": ["떡", "디저트"],
+  "hasMap": "https://map.naver.com/p/entry/place/2041991440",
+  "sameAs": [
+    "https://www.instagram.com/eroom2000/",
+    "https://smartstore.naver.com/eroom2026",
+    "https://m.blog.naver.com/eroom2026"
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "17:00" }
+  ]
+}
+</script>
+
+<!-- Fonts: 본문 Pretendard(시안 CDN·무버전) / 제목 Paperlogy(OFL, 구글폰트 미제공 → 로컬 서브셋 self-host) -->
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="preload" as="font" type="font/woff2" href="paperlogy-sub.woff2" crossorigin />
+
+<style>
+@font-face{ font-family:"Paperlogy"; font-style:normal; font-weight:700; font-display:swap; src:url("paperlogy-sub.woff2") format("woff2"); }
+
+/* ============================================================
+   이룸미당 (EROOM MIDANG) — 링크 허브 · 모던 브랜드
+   코발트 블루 #2D4BA3(로고 실측) + 화이트 · 쌀눈 노랑은 점 하나만큼
+   ============================================================ */
+:root{
+  --blue:      #2D4BA3;   /* 로고 배경 실측 · 흰 글자 대비 7.9 */
+  --blue-deep: #233C86;   /* hover·press */
+  --blue-ink:  #1E3374;   /* 흰 바탕 위 파란 텍스트 */
+  --grain:     #FAC661;   /* 로고 쌀눈 실측 — 점·밑줄 장식 전용(텍스트 X) */
+  --paper:     #FFFFFF;
+  --paper-2:   #F4F6FB;   /* 쿨 라이트(베이지 금지) */
+  --line:      #E1E6F1;
+  --ink:       #151C33;
+  --ink-soft:  #4A5270;
+  --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --head: "Paperlogy", var(--sans);
+  --r: 18px;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{ margin:0; font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.65; letter-spacing:-.01em; -webkit-font-smoothing:antialiased; }
+img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; text-decoration:none; }
+.col{ width:100%; max-width:480px; margin:0 auto; padding:0 20px; }
+
+/* ---------- hero (blue) ---------- */
+.hero{ background:var(--blue); color:#fff; text-align:center; padding:52px 0 76px; position:relative; overflow:hidden; }
+.hero::after{ /* 흰 바탕으로 넘어가는 둥근 쌀알 곡선 */
+  content:""; position:absolute; left:50%; bottom:-1px; width:150%; height:56px; transform:translateX(-50%);
+  background:var(--paper); border-radius:50% 50% 0 0 / 100% 100% 0 0;
+}
+.hero-logo{ width:min(72%,280px); margin:0 auto; }
+.hero .lead{ font-family:var(--head); font-weight:700; font-size:1.18rem; margin:26px 0 14px; letter-spacing:-.02em; }
+.hero .lead i{ font-style:normal; display:inline-block; width:.42em; height:.42em; border-radius:50%; background:var(--grain); vertical-align:.18em; margin-right:.45em; }
+/* 쌀 포대 '표시사항' 라벨처럼 — 항목명 : 값 */
+.label{ width:min(100%,272px); margin:4px auto 0; text-align:left; border-top:1.5px solid #fff; border-bottom:1.5px solid #fff; }
+.label div{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:8px 2px; }
+.label div + div{ border-top:1px solid rgba(255,255,255,.4); }
+.label dt{ font-size:.78rem; color:rgba(255,255,255,.86); }
+.label dd{ margin:0; font-family:var(--head); font-weight:700; font-size:.96rem; }
+
+/* ---------- feature ---------- */
+.feature{ margin-top:-30px; position:relative; z-index:2; }
+.feature figure{ margin:0; border-radius:var(--r); overflow:hidden; box-shadow:0 14px 34px -14px rgba(30,51,116,.38); background:#fff; }
+.feature img{ width:100%; aspect-ratio:4/3; object-fit:cover; }
+.feature figcaption{ display:flex; justify-content:space-between; align-items:center; gap:10px; padding:14px 18px; font-size:.9rem; color:var(--ink-soft); border-top:1px solid var(--line); }
+.feature figcaption b{ font-family:var(--head); font-weight:700; color:var(--ink); font-size:1.02rem; }
+
+/* ---------- links ---------- */
+.links{ display:flex; flex-direction:column; gap:12px; margin:28px 0 0; }
+.lnk{ display:flex; align-items:center; gap:14px; padding:15px 16px; border-radius:var(--r); border:1.5px solid var(--line); background:#fff; transition:transform .15s ease, border-color .15s ease, background .15s ease; }
+.lnk .ic{ flex:0 0 44px; width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--paper-2); color:var(--blue); }
+.lnk .ic svg{ width:22px; height:22px; }
+.lnk .tx{ flex:1; min-width:0; }
+.lnk .tx b{ display:block; font-family:var(--head); font-weight:700; font-size:1.06rem; line-height:1.25; }
+.lnk .tx span{ font-size:.84rem; color:var(--ink-soft); }
+.lnk .arw{ flex:0 0 auto; color:var(--ink-soft); }
+.lnk .arw svg{ width:18px; height:18px; }
+.lnk.primary{ background:var(--blue); border-color:var(--blue); color:#fff; }
+.lnk.primary .ic{ background:rgba(255,255,255,.14); color:#fff; }
+.lnk.primary .tx span, .lnk.primary .arw{ color:rgba(255,255,255,.86); }
+.lnk:active{ transform:scale(.98); }
+.lnk:focus-visible{ outline:3px solid var(--grain); outline-offset:3px; }
+@media (hover:hover){
+  .lnk:hover{ border-color:var(--blue); }
+  .lnk.primary:hover{ background:var(--blue-deep); border-color:var(--blue-deep); }
+}
+
+/* ---------- section head ---------- */
+.sec{ margin-top:52px; }
+.kick{ display:inline-flex; align-items:center; gap:.5em; font-size:.76rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--blue-ink); }
+.kick::before{ content:""; width:.5em; height:.5em; border-radius:50%; background:var(--grain); }
+.sec h2{ font-family:var(--head); font-weight:700; font-size:1.5rem; line-height:1.35; letter-spacing:-.03em; margin:.45em 0 .6em; word-break:keep-all; }
+
+/* ---------- story ---------- */
+.story{ background:var(--paper-2); border-radius:var(--r); padding:28px 22px; }
+.story p{ margin:0 0 .9em; color:var(--ink-soft); font-size:.95rem; word-break:keep-all; }
+.story p:last-of-type{ margin-bottom:0; }
+.story p b{ color:var(--ink); font-weight:700; }
+.pillars{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:22px 0 0; padding:0; list-style:none; }
+.pillars li{ background:#fff; border-radius:12px; padding:14px 8px; text-align:center; font-size:.78rem; color:var(--ink-soft); line-height:1.4; word-break:keep-all; }
+.pillars li strong{ display:block; font-family:var(--head); font-weight:700; font-size:.98rem; color:var(--blue-ink); margin-bottom:3px; }
+
+/* ---------- menu ---------- */
+.shots{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px; }
+.shots img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px; }
+.menu{ list-style:none; margin:0; padding:0; border-top:1.5px solid var(--ink); }
+.menu li{ display:flex; align-items:center; gap:12px; padding:14px 2px; border-bottom:1px solid var(--line); }
+.menu .nm{ flex:1; font-weight:600; }
+.menu .nm small{ font-weight:500; color:var(--ink-soft); margin-left:.35em; font-size:.84rem; }
+.menu .pr{ font-variant-numeric:tabular-nums; font-weight:700; color:var(--blue-ink); }
+.note{ font-size:.82rem; color:var(--ink-soft); margin:12px 2px 0; word-break:keep-all; }
+
+/* ---------- visit ---------- */
+.visit dl{ margin:0; border-top:1.5px solid var(--ink); }
+.visit .row{ display:grid; grid-template-columns:72px 1fr; gap:10px; padding:14px 2px; border-bottom:1px solid var(--line); font-size:.95rem; }
+.visit dt{ font-weight:700; color:var(--blue-ink); }
+.visit dd{ margin:0; word-break:keep-all; }
+.visit dd small{ display:block; color:var(--ink-soft); font-size:.84rem; margin-top:2px; }
+.visit a.tel{ font-weight:700; font-variant-numeric:tabular-nums; border-bottom:2px solid var(--grain); }
+
+/* ---------- footer ---------- */
+.foot{ margin-top:56px; background:var(--blue); color:#fff; text-align:center; padding:34px 20px 40px; }
+.foot img{ width:30px; margin:0 auto 12px; }
+.foot p{ margin:.25em 0; font-size:.82rem; color:rgba(255,255,255,.86); }
+.foot b{ font-family:var(--head); font-weight:700; font-size:1.05rem; color:#fff; }
+.foot a{ border-bottom:1px solid rgba(255,255,255,.5); }
+
+/* ---------- motion ---------- */
+.reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1); }
+.reveal.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+@media (min-width:600px){
+  .col{ max-width:540px; }
+  .hero{ padding-top:64px; }
+  .sec h2{ font-size:1.7rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="col">
+    <h1 style="margin:0"><img class="hero-logo" src="er-logo.webp" alt="이룸미당 Rice Cake &amp; Dessert 로고 — 쌀알 심볼" width="812" height="664" /></h1>
+    <p class="lead"><i aria-hidden="true"></i>쌀알 그대로 빚은 수제 찰떡</p>
+    <dl class="label" aria-label="이룸미당 표시사항">
+      <div><dt>원산지</dt><dd>국내산 쌀 100%</dd></div>
+      <div><dt>생산</dt><dd>당일 생산 · 당일 판매</dd></div>
+      <div><dt>시작</dt><dd>Since 2000</dd></div>
+    </dl>
+  </div>
+</header>
+
+<main class="col">
+
+  <!-- ============ FEATURE ============ -->
+  <div class="feature reveal">
+    <figure>
+      <img src="er-trio.webp" alt="쑥·단호박·초당옥수수 말랑이떡 세 가지가 흰 상자에 담긴 모습" width="1080" height="810" />
+      <figcaption><b>말랑이떡</b><span>이룸미당 대표 메뉴</span></figcaption>
+    </figure>
+  </div>
+
+  <!-- ============ LINKS ============ -->
+  <nav class="links" aria-label="이룸미당 바로가기">
+    <a class="lnk primary reveal" href="https://smartstore.naver.com/eroom2026" target="_blank" rel="noopener">
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></span>
+      <span class="tx"><b>스마트스토어 주문</b><span>전국 택배 · 선물 세트</span></span>
+      <span class="arw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="lnk reveal" href="https://map.naver.com/p/entry/place/2041991440" target="_blank" rel="noopener">
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
+      <span class="tx"><b>네이버 예약 · 매장 위치</b><span>방문 전 사전 예약을 추천해요</span></span>
+      <span class="arw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="lnk reveal" href="https://m.blog.naver.com/eroom2026/224308913448" target="_blank" rel="noopener">
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h10.5L19 8v11.5H5z"/><path d="M8.5 11h7M8.5 14.5h7M8.5 7.8h4"/></svg></span>
+      <span class="tx"><b>이룸미당 이야기</b><span>네이버 블로그 · 브랜드 소개</span></span>
+      <span class="arw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="lnk reveal" href="tel:0507-1334-3082">
+      <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 3.8 9 3.5l1.4 4-2 1.3a11 11 0 0 0 6.8 6.8l1.3-2 4 1.4-.3 2.4a2 2 0 0 1-2.1 1.7C10.5 18.6 5.4 13.5 4.9 5.9a2 2 0 0 1 1.7-2.1Z"/></svg></span>
+      <span class="tx"><b>전화 문의</b><span>0507-1334-3082 · 영업시간 내</span></span>
+      <span class="arw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
+  </nav>
+
+  <!-- ============ STORY ============ -->
+  <section class="sec reveal" aria-labelledby="story-h">
+    <div class="story">
+      <span class="kick">Since 2000</span>
+      <h2 id="story-h">쌀알 한 톨부터<br />그대로 지킵니다</h2>
+      <p>대구 월배시장 <b>‘돌쇠떡집’</b>을 일군 부모님께 떡의 기본을 배웠고, 떡 브랜드 R&amp;D팀에서 품질과 제품 개발을 맡으며 경험을 쌓았습니다.</p>
+      <p>이룸미당의 찰떡은 쌀을 가루로 갈지 않습니다. <b>찹쌀밥을 그대로 빚어</b> 시간이 조금 더 걸리지만, 더 고소하고 속이 편한 식감을 냅니다.</p>
+      <ul class="pillars">
+        <li><strong>국내산 쌀</strong>100% 사용</li>
+        <li><strong>쌀알 그대로</strong>쌀가루 대신</li>
+        <li><strong>당일 생산</strong>당일 판매</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section class="sec reveal" aria-labelledby="menu-h">
+    <span class="kick">Menu</span>
+    <h2 id="menu-h">말랑이떡</h2>
+    <div class="shots">
+      <img loading="lazy" src="er-lineup.webp" alt="쑥·단호박·흰 말랑이떡이 줄지어 놓인 모습" width="900" height="900" />
+      <img loading="lazy" src="er-white.webp" alt="하얀 이룸말랑이떡 클로즈업" width="900" height="900" />
+      <img loading="lazy" src="er-ssuk.webp" alt="접시 위 반으로 자른 쑥말랑이떡" width="900" height="900" />
+    </div>
+    <ul class="menu">
+      <li><span class="nm">이룸말랑이떡<small>하양이</small></span><span class="pr">1,200원</span></li>
+      <li><span class="nm">흑임자말랑이떡<small>까망이</small></span><span class="pr">1,600원</span></li>
+      <li><span class="nm">초당말랑이떡</span><span class="pr">1,500원</span></li>
+      <li><span class="nm">쑥말랑이떡</span><span class="pr">1,500원</span></li>
+    </ul>
+    <p class="note">낱개 가격 기준 · 8개입(1호)·16개입(2호) 세트는 스마트스토어·네이버에서 확인해 주세요.</p>
+  </section>
+
+  <!-- ============ VISIT ============ -->
+  <section class="sec visit reveal" aria-labelledby="visit-h">
+    <span class="kick">Visit</span>
+    <h2 id="visit-h">매장 안내</h2>
+    <dl>
+      <div class="row"><dt>주소</dt><dd>경기 의정부시 용현로159번길 12<br />1층 101호<small>의정부송산역 2번 출구에서 약 880m</small></dd></div>
+      <div class="row"><dt>영업</dt><dd>월–토 09:00 – 17:00<small>일요일 정기휴무 (상담만 가능)</small></dd></div>
+      <div class="row"><dt>예약</dt><dd>네이버 예약 · 톡톡 · 인스타그램 DM<small>당일 소량 생산이라 조기 품절될 수 있어요. 사전 예약 후 방문을 추천해요.</small></dd></div>
+      <div class="row"><dt>전화</dt><dd><a class="tel" href="tel:0507-1334-3082">0507-1334-3082</a></dd></div>
+    </dl>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <img src="er-grain.webp" alt="" width="251" height="351" />
+  <p><b>이룸미당</b></p>
+  <p>Rice Cake &amp; Dessert · <a href="https://www.instagram.com/eroom2000/" target="_blank" rel="noopener">@eroom2000</a></p>
+  <p>© 2026 이룸미당. 정성으로 빚어 이룸을 전합니다.</p>
+</footer>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.reveal'));
+  var show=function(el){ el.classList.add('in'); };
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ show(e.target); io.unobserve(e.target); } }); }, {threshold:.06});
+    items.forEach(function(el,i){ el.style.transitionDelay=Math.min(i,5)*0.05+'s'; io.observe(el); });
+    setTimeout(function(){ items.forEach(show); }, 2000);
+  } else { items.forEach(show); }
+})();
+</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</body>
+</html>
