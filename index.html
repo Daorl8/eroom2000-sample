@@ -162,14 +162,13 @@ section[id]{ scroll-margin-top:64px; }
 .mlist li + li{ border-top:1px solid var(--line); }
 .mlist b{ font-family:var(--head); font-weight:700; font-size:clamp(1.1rem,2.6vw,1.35rem); letter-spacing:-.02em; }
 .mlist span{ font-size:.86rem; color:var(--ink-soft); }
-.mset{ margin:14px 2px 0; font-size:.92rem; }
 .note{ font-size:.88rem; color:var(--ink-soft); margin:18px 0 0; word-break:keep-all; line-height:1.65; }
 .note b{ color:var(--ink); }
 .note a{ color:var(--blue-ink); font-weight:600; border-bottom:2px solid var(--grain); }
 
 /* ---------- gift ---------- */
 .gift-grid{ display:grid; gap:32px; }
-.gift-photo img{ width:100%; aspect-ratio:1/1; object-fit:cover; }
+.gift-photo img{ width:100%; aspect-ratio:4/5; object-fit:cover; object-position:50% 60%; }
 .spec{ margin:0; border-top:var(--rule); border-bottom:var(--rule); }
 .spec div{ display:grid; gap:4px; padding:16px 0; }
 .spec div + div{ border-top:1px solid var(--line); }
@@ -177,10 +176,20 @@ section[id]{ scroll-margin-top:64px; }
 .spec dd{ margin:0; color:var(--ink-soft); font-size:.94rem; word-break:keep-all; }
 
 /* ---------- gallery (크기 섞기) ---------- */
-.gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:6px; }
-.gallery img{ width:100%; height:100%; aspect-ratio:1/1; object-fit:cover; }
-.gallery .big{ grid-column:span 2; }
-.gallery .big img{ aspect-ratio:4/3; object-position:50% 52%; }
+/* 슬라이드: 모바일 한 화면 1장(인스타 피드처럼), PC 3장 */
+.slider{ position:relative; }
+.track{ display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; -webkit-overflow-scrolling:touch; scrollbar-width:none; overscroll-behavior-x:contain; }
+.track::-webkit-scrollbar{ display:none; }
+.track:focus-visible{ outline:3px solid var(--grain); outline-offset:3px; }
+.slide{ flex:0 0 100%; margin:0; scroll-snap-align:start; scroll-snap-stop:always; }
+.slide img{ width:100%; aspect-ratio:4/5; object-fit:cover; }
+.snav{ display:none; position:absolute; top:50%; transform:translateY(-50%); width:44px; height:44px; border:1.5px solid var(--ink); background:#fff; color:var(--ink); font-size:1.6rem; line-height:1; cursor:pointer; }
+.snav.prev{ left:-14px; } .snav.next{ right:-14px; }
+.snav:disabled{ opacity:.3; cursor:default; }
+.snav:focus-visible{ outline:3px solid var(--grain); outline-offset:3px; }
+.dots{ display:flex; justify-content:center; gap:7px; margin-top:14px; }
+.dots span{ width:7px; height:7px; border-radius:50%; background:var(--line); transition:background .2s ease, transform .2s ease; }
+.dots span.on{ background:var(--blue); transform:scale(1.25); }
 
 /* ---------- reviews (장부처럼 줄로) ---------- */
 .reviews{ display:grid; border-top:var(--rule); }
@@ -229,9 +238,8 @@ section[id]{ scroll-margin-top:64px; }
 
 /* ---------- ≥720 ---------- */
 @media (min-width:720px){
-  .gallery{ grid-template-columns:repeat(4,1fr); }
-  .gallery .big{ grid-column:span 2; grid-row:span 2; }
-  .gallery .big img{ aspect-ratio:auto; }
+  .slide{ flex-basis:calc((100% - 20px) / 3); }
+  .snav{ display:block; }
   .reviews{ grid-template-columns:1fr 1fr; column-gap:48px; }
 }
 /* ---------- ≥960 PC ---------- */
@@ -280,8 +288,9 @@ section[id]{ scroll-margin-top:64px; }
         <div><dt>시작</dt><dd>Since 2000</dd></div>
       </dl>
       <div class="hero-cta">
-        <a class="btn white" href="https://smartstore.naver.com/eroom2026" target="_blank" rel="noopener">스마트스토어 주문</a>
-        <a class="btn ghost-w" href="https://map.naver.com/p/entry/place/2041991440" target="_blank" rel="noopener">네이버 예약</a>
+        <a class="btn ghost-w" href="tel:0507-1334-3082">전화 주문</a>
+        <a class="btn white" href="https://smartstore.naver.com/eroom2026" target="_blank" rel="noopener">스마트스토어 (택배)</a>
+        <a class="btn ghost-w" href="https://map.naver.com/p/entry/place/2041991440" target="_blank" rel="noopener">네이버 예약 (방문)</a>
       </div>
     </div>
     <div class="hero-photo">
@@ -327,16 +336,16 @@ section[id]{ scroll-margin-top:64px; }
       <h2 id="menu-h">말랑이떡</h2>
       <p class="sub">대표 제품인 말랑이떡은 떡의 대표 재료를 그대로 활용해 그 기본을 담았습니다.</p>
       <div class="menu-grid">
-        <div class="menu-photo reveal"><img loading="lazy" src="er-lineup.webp" alt="쑥·단호박·흰 말랑이떡이 색깔별로 줄지어 놓인 모습" width="900" height="900" /></div>
+        <div class="menu-photo reveal"><img loading="lazy" src="er-lineup2.webp" alt="쑥·호박·하얀 말랑이떡이 색깔별로 줄지어 놓인 모습" width="664" height="996" /></div>
         <div class="reveal">
           <ul class="mlist">
             <li><b>이룸말랑이떡</b><span>하양이</span></li>
+            <li><b>호박말랑이떡</b><span>노랑이</span></li>
+            <li><b>쑥말랑이떡</b><span>초록이</span></li>
             <li><b>흑임자말랑이떡</b><span>까망이</span></li>
-            <li><b>초당말랑이떡</b></li>
-            <li><b>쑥말랑이떡</b></li>
+            <li><b>초당말랑이떡</b><span>여름 시즌 상품</span></li>
           </ul>
-          <p class="mset">낱개와 8개입(1호) · 16개입(2호) 세트로 준비해요.</p>
-          <p class="note"><b>메뉴와 가격은 시기마다 달라질 수 있어요.</b> 오늘의 메뉴와 가격은 <a href="https://smartstore.naver.com/eroom2026" target="_blank" rel="noopener">스마트스토어</a>·<a href="https://www.instagram.com/eroom2000/" target="_blank" rel="noopener">인스타그램</a>에서 확인해 주세요.</p>
+          <p class="note"><b>메뉴와 가격은 제품별 차이가 있습니다.</b> 오늘의 메뉴와 새로운 제품 소식은 <a href="https://www.instagram.com/eroom2000/" target="_blank" rel="noopener">인스타그램</a>을 통해서 가장 빠르게 확인할 수 있습니다.</p>
         </div>
       </div>
     </div>
@@ -347,7 +356,7 @@ section[id]{ scroll-margin-top:64px; }
     <div class="wrap">
       <div class="sh"><span>선물 · 답례</span><span>전국 택배 가능</span></div>
       <div class="gift-grid">
-        <div class="gift-photo reveal"><img loading="lazy" src="er-gift.webp" alt="빨간 리본을 묶은 인절미 선물 상자들" width="900" height="900" /></div>
+        <div class="gift-photo reveal"><img loading="lazy" src="er-gift2.webp" alt="말랑이떡과 인절미를 한 칸씩 담은 이룸미당 답례 2구 상자" width="598" height="804" /></div>
         <div class="reveal">
           <h2 id="gift-h">정성으로 빚은 떡과 함께<br />마음을 전하세요</h2>
           <dl class="spec">
@@ -365,12 +374,20 @@ section[id]{ scroll-margin-top:64px; }
     <div class="wrap">
       <div class="sh"><span>매일 빚는 떡</span><span>@eroom2000</span></div>
       <h2 id="gallery-h">재료 본연의 맛을 전하려<br />매일 연구합니다</h2>
-      <div class="gallery reveal">
-        <div class="big"><img loading="lazy" src="er-bite.webp" alt="한 입 베어 문 팥 찹쌀떡을 손에 든 모습" width="1024" height="1280" /></div>
-        <div><img loading="lazy" src="er-white.webp" alt="하얀 이룸말랑이떡 클로즈업" width="900" height="900" /></div>
-        <div><img loading="lazy" src="er-chodang.webp" alt="나무 상자에 담은 초당말랑이떡" width="900" height="900" /></div>
-        <div><img loading="lazy" src="er-cups.webp" alt="이룸미당 파란 스티커를 붙인 찹쌀떡 컵 포장" width="900" height="900" /></div>
-        <div><img loading="lazy" src="er-trio.webp" alt="쑥·단호박·초당 말랑이떡 세 가지" width="1080" height="810" /></div>
+      <!-- 갤러리 슬라이드: 모바일 1장 · PC 3장. 넘김은 CSS scroll-snap(스크립트 없어도 손으로 넘어감), 점·화살표만 JS. 사진 추가/삭제는 figure 태그 한 줄만 넣고 빼면 됨 -->
+      <div class="slider reveal" data-slider>
+        <div class="track" tabindex="0" role="region" aria-label="매일 빚는 떡 사진 — 옆으로 넘겨 보세요">
+          <figure class="slide"><img loading="lazy" src="er-bite.webp" alt="한 입 베어 문 팥 찹쌀떡을 손에 든 모습" width="1024" height="1280" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-lineup2.webp" alt="쑥·호박·하얀 말랑이떡이 색깔별로 줄지어 놓인 모습" width="664" height="996" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-white.webp" alt="하얀 이룸말랑이떡 클로즈업" width="900" height="900" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-chodang.webp" alt="나무 상자에 담은 초당말랑이떡" width="900" height="900" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-gift2.webp" alt="이룸미당 답례 2구 상자" width="598" height="804" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-cups.webp" alt="이룸미당 파란 스티커를 붙인 찹쌀떡 컵 포장" width="900" height="900" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-trio.webp" alt="쑥·호박·초당 말랑이떡 세 가지" width="1080" height="810" /></figure>
+        </div>
+        <button class="snav prev" type="button" aria-label="이전 사진">‹</button>
+        <button class="snav next" type="button" aria-label="다음 사진">›</button>
+        <div class="dots" aria-hidden="true"></div>
       </div>
       <p class="note">새 메뉴와 오늘의 떡은 <a href="https://www.instagram.com/eroom2000/" target="_blank" rel="noopener">인스타그램 @eroom2000</a>에 먼저 올라와요.</p>
     </div>
@@ -477,6 +494,26 @@ section[id]{ scroll-margin-top:64px; }
     function step(ts){ if(t0===null) t0=ts; var p=Math.min(1,(ts-t0)/dur); window.scrollTo(0, startY+dist*ease(p)); if(p<1) requestAnimationFrame(step); }
     requestAnimationFrame(step);
     if(history.replaceState) history.replaceState(null,'',id);
+  });
+
+  /* 3) 갤러리 슬라이드 — 점 표시·화살표만 담당(넘김 자체는 CSS scroll-snap) */
+  [].forEach.call(document.querySelectorAll('[data-slider]'), function(s){
+    var track=s.querySelector('.track'); if(!track) return;
+    var slides=[].slice.call(track.children), prev=s.querySelector('.prev'), next=s.querySelector('.next'), dotsEl=s.querySelector('.dots');
+    var dots=slides.map(function(){ var d=document.createElement('span'); if(dotsEl) dotsEl.appendChild(d); return d; });
+    var stepW=function(){ return slides.length>1 ? (slides[1].offsetLeft-slides[0].offsetLeft) : track.clientWidth; };
+    var update=function(){
+      var w=stepW()||1, i=Math.round(track.scrollLeft/w), per=Math.max(1,Math.round(track.clientWidth/w));
+      dots.forEach(function(d,k){ d.className=(k>=i && k<i+per)?'on':''; });
+      if(prev) prev.disabled = track.scrollLeft<=2;
+      if(next) next.disabled = track.scrollLeft>=track.scrollWidth-track.clientWidth-2;
+    };
+    var ticking=false;
+    track.addEventListener('scroll', function(){ if(!ticking){ ticking=true; requestAnimationFrame(function(){ update(); ticking=false; }); } }, {passive:true});
+    if(prev) prev.addEventListener('click', function(){ track.scrollBy({left:-stepW(), behavior:'smooth'}); });
+    if(next) next.addEventListener('click', function(){ track.scrollBy({left:stepW(), behavior:'smooth'}); });
+    window.addEventListener('resize', update);
+    update();
   });
 })();
 </script>
