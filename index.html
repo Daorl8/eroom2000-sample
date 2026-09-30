@@ -178,18 +178,25 @@ section[id]{ scroll-margin-top:64px; }
 /* ---------- gallery (크기 섞기) ---------- */
 /* 슬라이드: 모바일 한 화면 1장(인스타 피드처럼), PC 3장 */
 .slider{ position:relative; }
-.track{ display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; -webkit-overflow-scrolling:touch; scrollbar-width:none; overscroll-behavior-x:contain; }
+.track{ display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; overscroll-behavior-x:contain; }
 .track::-webkit-scrollbar{ display:none; }
 .track:focus-visible{ outline:3px solid var(--grain); outline-offset:3px; }
 .slide{ flex:0 0 100%; margin:0; scroll-snap-align:start; scroll-snap-stop:always; }
 .slide img{ width:100%; aspect-ratio:4/5; object-fit:cover; }
-.snav{ display:none; position:absolute; top:50%; transform:translateY(-50%); width:44px; height:44px; border:1.5px solid var(--ink); background:#fff; color:var(--ink); font-size:1.6rem; line-height:1; cursor:pointer; }
-.snav.prev{ left:-14px; } .snav.next{ right:-14px; }
-.snav:disabled{ opacity:.3; cursor:default; }
-.snav:focus-visible{ outline:3px solid var(--grain); outline-offset:3px; }
-.dots{ display:flex; justify-content:center; gap:7px; margin-top:14px; }
-.dots span{ width:7px; height:7px; border-radius:50%; background:var(--line); transition:background .2s ease, transform .2s ease; }
-.dots span.on{ background:var(--blue); transform:scale(1.25); }
+/* 화살표: 인스타그램식 — 사진 안쪽 반투명 흰 원, 얇은 꺾쇠, 마우스를 올리면 나타남, 끝에 닿으면 사라짐 */
+.snav{ display:none; position:absolute; top:calc(50% - 12px); transform:translateY(-50%); width:36px; height:36px; padding:0; border:0; border-radius:50%;
+  background:rgba(255,255,255,.88); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); color:#262626;
+  box-shadow:0 1px 8px rgba(21,28,51,.18); cursor:pointer; place-items:center;
+  opacity:0; transition:opacity .25s ease, transform .2s ease, background .2s ease; }
+.snav svg{ width:16px; height:16px; }
+.snav.prev{ left:12px; } .snav.next{ right:12px; }
+.slider:hover .snav, .snav:focus-visible{ opacity:1; }
+.snav:hover{ background:#fff; transform:translateY(-50%) scale(1.06); }
+.snav:disabled{ opacity:0 !important; pointer-events:none; }
+.snav:focus-visible{ outline:3px solid var(--grain); outline-offset:2px; }
+.dots{ display:flex; justify-content:center; gap:6px; margin-top:14px; }
+.dots span{ width:6px; height:6px; border-radius:50%; background:var(--line); transition:background .3s ease, transform .3s ease; }
+.dots span.on{ background:var(--blue); transform:scale(1.2); }
 
 /* ---------- reviews (장부처럼 줄로) ---------- */
 .reviews{ display:grid; border-top:var(--rule); }
@@ -239,7 +246,7 @@ section[id]{ scroll-margin-top:64px; }
 /* ---------- ≥720 ---------- */
 @media (min-width:720px){
   .slide{ flex-basis:calc((100% - 20px) / 3); }
-  .snav{ display:block; }
+  .snav{ display:grid; }
   .reviews{ grid-template-columns:1fr 1fr; column-gap:48px; }
 }
 /* ---------- ≥960 PC ---------- */
@@ -385,8 +392,8 @@ section[id]{ scroll-margin-top:64px; }
           <figure class="slide"><img loading="lazy" src="er-cups.webp" alt="이룸미당 파란 스티커를 붙인 찹쌀떡 컵 포장" width="900" height="900" /></figure>
           <figure class="slide"><img loading="lazy" src="er-trio.webp" alt="쑥·호박·초당 말랑이떡 세 가지" width="1080" height="810" /></figure>
         </div>
-        <button class="snav prev" type="button" aria-label="이전 사진">‹</button>
-        <button class="snav next" type="button" aria-label="다음 사진">›</button>
+        <button class="snav prev" type="button" aria-label="이전 사진"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="snav next" type="button" aria-label="다음 사진"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         <div class="dots" aria-hidden="true"></div>
       </div>
       <p class="note">새 메뉴와 오늘의 떡은 <a href="https://www.instagram.com/eroom2000/" target="_blank" rel="noopener">인스타그램 @eroom2000</a>에 먼저 올라와요.</p>
@@ -510,8 +517,21 @@ section[id]{ scroll-margin-top:64px; }
     };
     var ticking=false;
     track.addEventListener('scroll', function(){ if(!ticking){ ticking=true; requestAnimationFrame(function(){ update(); ticking=false; }); } }, {passive:true});
-    if(prev) prev.addEventListener('click', function(){ track.scrollBy({left:-stepW(), behavior:'smooth'}); });
-    if(next) next.addEventListener('click', function(){ track.scrollBy({left:stepW(), behavior:'smooth'}); });
+    /* 화살표 이동은 rAF로 직접 애니메이션(기기 '동작 줄이기'에도 부드럽게) + 움직이는 동안 스냅 해제(스냅이 중간에 끼어들어 끊기는 것 방지) */
+    var anim=null;
+    var glide=function(dir){
+      var w=stepW()||1, max=track.scrollWidth-track.clientWidth;
+      var from=track.scrollLeft, to=Math.max(0,Math.min(max,(Math.round(from/w)+dir)*w));
+      if(to===from) return;
+      if(anim) cancelAnimationFrame(anim);
+      track.style.scrollSnapType='none';
+      var t0=null, dur=520, ease=function(t){ return 1-Math.pow(1-t,3); };
+      var tick=function(ts){ if(t0===null) t0=ts; var p=Math.min(1,(ts-t0)/dur); track.scrollLeft=from+(to-from)*ease(p);
+        if(p<1){ anim=requestAnimationFrame(tick); } else { anim=null; track.style.scrollSnapType=''; update(); } };
+      anim=requestAnimationFrame(tick);
+    };
+    if(prev) prev.addEventListener('click', function(){ glide(-1); });
+    if(next) next.addEventListener('click', function(){ glide(1); });
     window.addEventListener('resize', update);
     update();
   });
