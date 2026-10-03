@@ -182,7 +182,7 @@ section[id]{ scroll-margin-top:64px; }
 .track::-webkit-scrollbar{ display:none; }
 .track:focus-visible{ outline:3px solid var(--grain); outline-offset:3px; }
 .slide{ flex:0 0 100%; margin:0; scroll-snap-align:start; scroll-snap-stop:always; }
-.slide img{ width:100%; aspect-ratio:4/5; object-fit:cover; }
+.slide img{ width:100%; aspect-ratio:1/1; object-fit:cover; } /* 사장님 사진 14장 중 가로 상자 사진이 9장 → 4:5면 상자 양옆이 잘려 1:1 */
 /* 화살표: 인스타그램식 — 사진 안쪽 반투명 흰 원, 얇은 꺾쇠, 마우스를 올리면 나타남, 끝에 닿으면 사라짐 */
 .snav{ display:none; position:absolute; top:calc(50% - 12px); transform:translateY(-50%); width:36px; height:36px; padding:0; border:0; border-radius:50%;
   background:rgba(255,255,255,.88); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); color:#262626;
@@ -384,13 +384,20 @@ section[id]{ scroll-margin-top:64px; }
       <!-- 갤러리 슬라이드: 모바일 1장 · PC 3장. 넘김은 CSS scroll-snap(스크립트 없어도 손으로 넘어감), 점·화살표만 JS. 사진 추가/삭제는 figure 태그 한 줄만 넣고 빼면 됨 -->
       <div class="slider reveal" data-slider>
         <div class="track" tabindex="0" role="region" aria-label="매일 빚는 떡 사진 — 옆으로 넘겨 보세요">
-          <figure class="slide"><img loading="lazy" src="er-bite.webp" alt="한 입 베어 문 팥 찹쌀떡을 손에 든 모습" width="1024" height="1280" /></figure>
-          <figure class="slide"><img loading="lazy" src="er-lineup2.webp" alt="쑥·호박·하얀 말랑이떡이 색깔별로 줄지어 놓인 모습" width="664" height="996" /></figure>
-          <figure class="slide"><img loading="lazy" src="er-white.webp" alt="하얀 이룸말랑이떡 클로즈업" width="900" height="900" /></figure>
-          <figure class="slide"><img loading="lazy" src="er-chodang.webp" alt="나무 상자에 담은 초당말랑이떡" width="900" height="900" /></figure>
-          <figure class="slide"><img loading="lazy" src="er-gift2.webp" alt="이룸미당 답례 2구 상자" width="598" height="804" /></figure>
-          <figure class="slide"><img loading="lazy" src="er-cups.webp" alt="이룸미당 파란 스티커를 붙인 찹쌀떡 컵 포장" width="900" height="900" /></figure>
-          <figure class="slide"><img loading="lazy" src="er-trio.webp" alt="쑥·호박·초당 말랑이떡 세 가지" width="1080" height="810" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-g01.webp" alt="한 입 베어 문 팥 찹쌀떡을 손에 든 모습" width="864" height="1080" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-g02.webp" alt="쑥·호박·하양 말랑이떡을 색깔별로 비스듬히 줄지어 담은 상자" width="810" height="1080" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-g03.webp" alt="하양·호박·흑임자·쑥 네 가지 말랑이떡을 담은 상자" width="1080" height="788" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-g04.webp" alt="콩고물을 묻힌 쑥떡을 젓가락으로 집어 든 모습" width="931" height="1080" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-g05.webp" alt="초당옥수수 알갱이가 박힌 초당말랑이떡 한 상자" width="1080" height="810" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-g06.webp" alt="고물을 묻혀 반으로 자른 호박떡 단면" width="1069" height="1080" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-g07.webp" alt="호박·견과·쑥·흑임자 떡을 줄지어 담은 상자" width="1080" height="810" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-g08.webp" alt="하얀 접시에 담고 시럽을 두른 쑥떡" width="809" height="1080" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-g09.webp" alt="쑥말랑이떡과 호박말랑이떡을 반씩 담은 상자" width="1080" height="810" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-g10.webp" alt="흑임자 고물을 묻혀 자른 떡 단면을 젓가락으로 집은 모습" width="810" height="1080" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-g11.webp" alt="쑥말랑이떡을 가득 담은 선물 상자" width="1080" height="811" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-g12.webp" alt="초당말랑이떡과 호박말랑이떡을 반씩 담은 상자" width="1080" height="810" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-g13.webp" alt="흑임자말랑이떡 한 상자" width="1080" height="721" /></figure>
+          <figure class="slide"><img loading="lazy" src="er-g14.webp" alt="쑥말랑이떡 한 상자" width="1080" height="810" /></figure>
         </div>
         <button class="snav prev" type="button" aria-label="이전 사진"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
         <button class="snav next" type="button" aria-label="다음 사진"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
